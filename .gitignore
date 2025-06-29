@@ -1,0 +1,9 @@
+# Ignore all folders and files by default, including hidden files and dotfiles
+/*
+.*
+
+# Except nvim and lazygit folders, and .tmux.conf
+!nvim/
+!lazygit/
+!.tmux.conf
+!.gitignore
