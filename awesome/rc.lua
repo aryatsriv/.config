@@ -309,19 +309,39 @@ globalkeys = gears.table.join(
 			client.focus:raise()
 		end
 	end, { description = "go back", group = "client" }),
+	-- Change brightness
+	awful.key({ modkey }, "F8", function()
+		awful.spawn("brightnessctl set 10%-")
+	end, { description = "decrease brightness", group = "system" }),
+
+	awful.key({ modkey }, "F9", function()
+		awful.spawn("brightnessctl set +10%")
+	end, { description = "increase brightness", group = "system" }),
+	-- Use Mod + F10/F11/F12 for volume
+	awful.key({ modkey }, "F10", function()
+		awful.spawn("pamixer -d 10")
+	end, { description = "volume up", group = "media" }),
+
+	awful.key({ modkey }, "F11", function()
+		awful.spawn("pamixer -i 10")
+	end, { description = "volume down", group = "media" }),
+
+	awful.key({ modkey }, "F12", function()
+		awful.spawn("pamixer -t")
+	end, { description = "toggle mute", group = "media" }),
 
 	-- Standard program
-	awful.key({ modkey }, "Return", function()
+	awful.key({ modkey }, "F1", function()
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 
 	--open file explorer
-	awful.key({ modkey }, "e", function()
+	awful.key({ modkey }, "F3", function()
 		awful.spawn("nautilus")
 	end, { description = "open file manager", group = "launcher" }),
 
 	-- Launch Google Chrome
-	awful.key({ modkey }, "b", function()
+	awful.key({ modkey }, "F2", function()
 		awful.spawn("google-chrome")
 	end, { description = "open Chrome browser", group = "launcher" }),
 
@@ -610,3 +630,8 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
+
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("pasystray")
+awful.spawn.with_shell("blueman-applet")
+awful.spawn.with_shell("dunst")
