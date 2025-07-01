@@ -635,3 +635,51 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("pasystray")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("dunst")
+
+
+-- Battery widget
+local battery_widget = wibox.widget {
+    widget = wibox.widget.textbox,
+    align  = "center"
+}
+
+-- Function to update battery status
+local function update_battery()
+    awful.spawn.easy_async_with_shell(
+        "acpi | awk -F', ' '{print $2}'",
+        function(stdout)
+            battery_widget.text = "🔋 " .. (stdout:gsub("\n", ""))
+        end
+    )
+end
+
+-- Update every 30 seconds
+gears.timer {
+    timeout   = 30,
+    autostart = true,
+    callback  = update_battery
+}
+
+update_battery()
+
+awful.screen.connect_for_each_screen(function(s)
+    -- ...existing code...
+    s.mywibox:setup({
+        layout = wibox.layout.align.horizontal,
+        { -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            mylauncher,
+            s.mytaglist,
+            s.mypromptbox,
+        },
+        s.mytasklist, -- Middle widget
+        { -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            mykeyboardlayout,
+            wibox.widget.systray(),
+            mytextclock,
+            battery_widget, -- <-- Add this line
+            s.mylayoutbox,
+        },
+    })
+end)
