@@ -57,7 +57,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 
-beautiful.wallpaper = "/home/aryolinux/Pictures/max-bvp-OerGCAc9m6E-unsplash.jpg"
+beautiful.wallpaper = "/home/aryolinux/Pictures/anders-jilden-cYrMQA7a3Wc-unsplash.png"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -683,4 +683,3 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 	})
 end)
-
