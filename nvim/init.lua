@@ -841,61 +841,61 @@ require('lazy').setup({
     end,
   },
 
-  --   { -- You can easily change to a different colorscheme.
+    { -- You can easily change to a different colorscheme.
   --     -- Change the name of the colorscheme plugin below, and then
   --     -- change the command in the config to whatever the name of that colorscheme is.
   --     --
   --     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  --  'folke/tokyonight.nvim',
-  --     priority = 1000, -- Make sure to load this before all the other start plugins.
-  --     init = function()
-  --       -- Load the colorscheme here.
-  --       -- Like many other themes, this one has different styles, and you could load
-  --       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --       vim.cmd.colorscheme 'tokyonight-night'
+   'folke/tokyonight.nvim',
+      priority = 1000, -- Make sure to load this before all the other start plugins.
+      init = function()
+        -- Load the colorscheme here.
+        -- Like many other themes, this one has different styles, and you could load
+        -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+        vim.cmd.colorscheme 'tokyonight-night'
 
-  --       -- You can configure highlights by doing something like:
-  --       vim.cmd.hi 'Comment gui=none'
-  --     end,
-  --   },
+        -- You can configure highlights by doing something like:
+        vim.cmd.hi 'Comment gui=none'
+      end,
+    },
   --
- {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-        require("catppuccin").setup({
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
-            background = { -- :h background
-                dark = "mocha",
-            },
-            transparent_background = true, -- disables setting the background color
-            term_colors = true, -- sets terminal colors
-            styles = {
-                comments = { "italic" },
-                conditionals = { "italic" },
-                loops = {},
-                functions = {},
-                keywords = {},
-                strings = {},
-                variables = {},
-                numbers = {}, 
-                booleans = {},
-                properties = {},
-                types = {},
-                operators = {},
-            },
-             color_overrides = {
-                mocha = {
-                    base = "#000000", -- Set the background to pure black
-                    mantle = "#000000",
-                    crust = "#000000",
-                },
-            },
-        })
-        vim.cmd.colorscheme "catppuccin"
-    end,
-},
+--  {
+--     "catppuccin/nvim",
+--     name = "catppuccin",
+--     priority = 1000,
+--     config = function()
+--         require("catppuccin").setup({
+--             flavour = "mocha", -- latte, frappe, macchiato, mocha
+--             background = { -- :h background
+--                 dark = "mocha",
+--             },
+--             transparent_background = true, -- disables setting the background color
+--             term_colors = true, -- sets terminal colors
+--             styles = {
+--                 comments = { "italic" },
+--                 conditionals = { "italic" },
+--                 loops = {},
+--                 functions = {},
+--                 keywords = {},
+--                 strings = {},
+--                 variables = {},
+--                 numbers = {}, 
+--                 booleans = {},
+--                 properties = {},
+--                 types = {},
+--                 operators = {},
+--             },
+--              color_overrides = {
+--                 mocha = {
+--                     base = "#000000", -- Set the background to pure black
+--                     mantle = "#000000",
+--                     crust = "#000000",
+--                 },
+--             },
+--         })
+--         vim.cmd.colorscheme "catppuccin"
+--     end,
+-- },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 

@@ -653,6 +653,12 @@ local function update_battery()
 	end)
 end
 
+-- React to screen changes (e.g., plugging/unplugging monitors)
+screen.connect_signal("request::desktop_decoration", function(s)
+	-- Set wallpaper if needed
+	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+end)
+
 -- Update every 30 seconds
 gears.timer({
 	timeout = 30,
