@@ -5,30 +5,30 @@ local awesome = awesome
 Debian_menu = {}
 
 Debian_menu["Debian_Applications_Network_Web_Browsing"] = {
-	{"Google Chrome","/opt/google/chrome/google-chrome","/opt/google/chrome/product_logo_32.xpm"},
+	{ "Google Chrome", "/opt/google/chrome/google-chrome", "/opt/google/chrome/product_logo_32.xpm" },
 }
 Debian_menu["Debian_Applications_Network"] = {
 	{ "Web Browsing", Debian_menu["Debian_Applications_Network_Web_Browsing"] },
 }
 Debian_menu["Debian_Applications_Science_Mathematics"] = {
-	{"Bc", "x-terminal-emulator -e ".."/usr/bin/bc"},
-	{"Dc", "x-terminal-emulator -e ".."/usr/bin/dc"},
+	{ "Bc", "x-terminal-emulator -e " .. "/usr/bin/bc" },
+	{ "Dc", "x-terminal-emulator -e " .. "/usr/bin/dc" },
 }
 Debian_menu["Debian_Applications_Science"] = {
 	{ "Mathematics", Debian_menu["Debian_Applications_Science_Mathematics"] },
 }
 Debian_menu["Debian_Applications_Shells"] = {
-	{"Bash", "x-terminal-emulator -e ".."/bin/bash --login"},
-	{"Dash", "x-terminal-emulator -e ".."/bin/dash -i"},
-	{"Sh", "x-terminal-emulator -e ".."/bin/sh --login"},
+	{ "Bash", "x-terminal-emulator -e " .. "/bin/bash --login" },
+	{ "Dash", "x-terminal-emulator -e " .. "/bin/dash -i" },
+	{ "Sh", "x-terminal-emulator -e " .. "/bin/sh --login" },
 }
 Debian_menu["Debian_Applications_System_Administration"] = {
-	{"Editres","editres"},
-	{"Xfontsel","xfontsel"},
-	{"Xkill","xkill"},
+	{ "Editres", "editres" },
+	{ "Xfontsel", "xfontsel" },
+	{ "Xkill", "xkill" },
 }
 Debian_menu["Debian_Applications_System_Monitoring"] = {
-	{"Xev","x-terminal-emulator -e xev"},
+	{ "Xev", "x-terminal-emulator -e xev" },
 }
 Debian_menu["Debian_Applications_System"] = {
 	{ "Administration", Debian_menu["Debian_Applications_System_Administration"] },
@@ -41,7 +41,13 @@ Debian_menu["Debian_Applications"] = {
 	{ "System", Debian_menu["Debian_Applications_System"] },
 }
 Debian_menu["Debian_Window_Managers"] = {
-	{"awesome",function () awesome.exec("/usr/bin/awesome") end,"/usr/share/pixmaps/awesome.xpm"},
+	{
+		"awesome",
+		function()
+			awesome.exec("/usr/bin/awesome")
+		end,
+		"/usr/share/pixmaps/awesome.xpm",
+	},
 }
 Debian_menu["Debian"] = {
 	{ "Applications", Debian_menu["Debian_Applications"] },
@@ -50,3 +56,4 @@ Debian_menu["Debian"] = {
 
 debian = { menu = { Debian_menu = Debian_menu } }
 return debian
+

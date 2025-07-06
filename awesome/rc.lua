@@ -340,12 +340,12 @@ globalkeys = gears.table.join(
 	end, { description = "open a terminal", group = "launcher" }),
 
 	--open file explorer
-	awful.key({ modkey }, "F3", function()
+	awful.key({ modkey }, "F1", function()
 		awful.spawn("nautilus")
 	end, { description = "open file manager", group = "launcher" }),
 
 	-- Launch Google Chrome
-	awful.key({ modkey }, "F1", function()
+	awful.key({ modkey }, "F2", function()
 		awful.spawn("google-chrome")
 	end, { description = "open Chrome browser", group = "launcher" }),
 
