@@ -3,7 +3,6 @@
 .*
 
 # Except nvim and lazygit folders, and .tmux.conf
-!nvim/
 !lazygit/
 !.tmux.conf
 !.gitignore
